@@ -1,0 +1,217 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import '~ngx-toastr/toastr.css';
+
+html,
+body {
+  height: 100%;
+  max-height: 100vh;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+
+  background-image: linear-gradient(to bottom right, #0d112d 0%, #12245c 40%, #1e427f 60%, #2c609c 100%);
+
+  background-size: 200% 200%;
+  animation: movingGradient 5s linear infinite alternate;
+
+  @keyframes movingGradient {
+    from {
+      background-position: 0 0;
+    }
+    to {
+      background-position: 100% 100%;
+    }
+  }
+}
+
+.full-body {
+  height: 100vh;
+  width: 100%;
+}
+
+.col-md-1,
+.col-md-2,
+.col-md-3,
+.col-md-4,
+.col-md-5,
+.col-md-6,
+.col-md-7,
+.col-md-8,
+.col-md-9,
+.col-md-10,
+.col-md-11,
+.col-md-12 {
+  float: left;
+  padding: 0px 5px !important;
+}
+.col-md-3 {
+  height: 75vh;
+  float: left;
+  padding: 10px !important;
+}
+
+.header {
+  margin-top: 1vh;
+  height: 5vh;
+}
+
+.name {
+  text-align: center;
+  color: white;
+}
+
+.filter {
+  color: white;
+  border: solid 1px #ccc;
+  border-radius: 4px;
+  padding: 5px 10px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.fas {
+  margin: 0px 10px;
+  color: white;
+  cursor: pointer;
+}
+
+.search {
+  background-color: #ffffff10;
+  color: white;
+  border: solid 1px #ccc;
+  border-radius: 4px;
+  height: 100%;
+  width: 100%;
+}
+.example-container {
+  width: 400px;
+  max-width: 100%;
+  margin: 0 25px 25px 0;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.example-list {
+  border: solid 1px #ccc;
+  min-height: 30px;
+  background: transparent;
+  border-radius: 4px;
+  overflow: hidden;
+  display: block;
+  background-color: #ffffff10;
+}
+
+.example-box {
+  padding: 15px 10px;
+  border-bottom: solid 1px #ccc;
+  color: white;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+  cursor: move;
+  background: transparent;
+  font-size: 14px;
+}
+
+.title {
+  align-items: center !important;
+  text-align: center !important;
+  font-size: 22px;
+  cursor: default;
+  padding: 20px 10px;
+  border-bottom: solid 1px #ccc;
+  color: white;
+}
+
+.list {
+  align-items: left !important;
+  text-align: left !important;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 20px 20px;
+  border-bottom: solid 1px #ccc;
+  color: white;
+
+  .add-list {
+    margin: 15px 0px;
+  }
+}
+
+.cdk-drag-preview {
+  box-sizing: border-box;
+  border-radius: 4px;
+  box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2), 0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12);
+}
+
+.cdk-drag-placeholder {
+  opacity: 0;
+}
+
+.cdk-drag-animating {
+  transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+.example-box:last-child {
+  border: none;
+}
+
+.example-list.cdk-drop-list-dragging .example-box:not(.cdk-drag-placeholder) {
+  transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+.my-class .mat-dialog-container {
+  background-color: #6c94b8 !important;
+
+  .col-md-12 {
+    margin: 10px;
+  }
+
+  .title {
+    text-align: left !important;
+    border: none;
+  }
+
+  .button {
+    border: solid 1px #ccc;
+    cursor: pointer;
+    text-align: center !important;
+    padding: 10px 5px !important;
+  }
+
+  .rad-group {
+    margin: 10px 0px 30px 0px;
+  }
+}
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.dx-texteditor {
+  background-color: transparent !important;
+}
+
+::-webkit-input-placeholder {
+  color: white !important;
+  opacity: 1 !important;
+}
+
+.dx-texteditor-input {
+  color: white;
+}
+
+.dx-item {  
+  color: white !important;  
+}  
+
+#toast-container > div {
+  opacity:1;
+}

@@ -1,0 +1,20 @@
+<div class="col-12">
+    <div class="col-md-12">
+        <div class="title">Başlık</div>
+        <!-- <input class="search" type="text"> -->
+        <dx-text-box class="search" [(value)]="title"></dx-text-box>
+    </div>
+    <div class="col-md-12">
+        <div class="title">Açıklama</div>
+        <!-- <input class="search" type="text"> -->
+        <dx-text-box class="search" [(value)]="description"></dx-text-box>
+    </div>
+    <div class="col-md-12">
+        <div class="title">Bitiş Tarihi</div>
+        <!-- <input class="search" type="date" placeholder="Bitiş Tarihi"> -->
+        <dx-date-box type="date" class="search" [(value)]="finishTime"></dx-date-box>
+    </div>
+    <div class="col-md-12">
+        <div class="title button" (click)="Save()">Kaydet</div>
+    </div>
+</div>

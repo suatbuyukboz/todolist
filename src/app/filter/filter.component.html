@@ -1,0 +1,18 @@
+<div class="col-12">
+    <div class="col-md-12">
+        <div class="title">Gösterim Tarihi</div>
+        <!-- bugün , bu hafta , bu ay , tarih ile , tarih aralığı ile -->
+        <dx-radio-group class="rad-group"
+          [items]="priorities"
+          [(value)]="selectedIndex"
+          layout="horizontal"
+        >
+        </dx-radio-group>
+    </div>
+    <div class="col-md-6">
+        <div class="title button" (click)="Save()">Kaydet</div>
+    </div>
+    <div class="col-md-6">
+        <div class="title button" (click)="Clean()">Temizle</div>
+    </div>
+</div>

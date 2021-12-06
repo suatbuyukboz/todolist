@@ -1,0 +1,70 @@
+<div class="col-12 full-body">
+  <div class="col-md-12 header">
+    <div class="col-12">
+      <div class="col-md-3">
+        <h1 class="name"></h1>
+      </div>
+      <div class="col-md-5">
+        <dx-text-box class="search" placeholder="Aranacak Kelime..." valueChangeEvent="keyup"
+          (onValueChanged)="GetTodos(this.selectedList)" [(value)]="searchkey"></dx-text-box>
+      </div>
+      <div class="col-md-2">
+        <div class="filter" (click)="openFilter()">
+          <i class="fas fa-filter"></i>Filtrele
+        </div>
+      </div>
+      <div class="col-md-2">
+        <div class="filter" (click)="openAdd()">
+          <i class="fas fa-plus"></i>Ekle
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3">
+    <div class="example-list">
+      <div class="title">Listelerim</div>
+      <div class="list" *ngFor="let item of lists" (click)="GetTodos(item.id)"><i (click)="DeleteList(item.id)"
+          class="fas fa-trash"></i><i *ngIf="item.id == this.selectedList"
+          class="fas fa-check"></i>{{item.name.length >= 20 ? item.name.substring(0,17) + "..." : item.name}}</div>
+      <div class="list">
+        <dx-text-box class="search" placeholder="Liste Adı..." [(value)]="newlistname"></dx-text-box>
+        <div class="filter add-list" (click)="CreateList()">
+          <i class="fas fa-plus"></i>Ekle
+        </div>
+      </div> 
+    </div>
+  </div>
+  <div class="col-md-3">
+    <div cdkDropList #todoList="cdkDropList" [cdkDropListData]="wait"
+      [cdkDropListConnectedTo]="[doneList,todoList,finishList]" class="example-list"
+      (cdkDropListDropped)="drop($event)">
+      <div class="title">Bekleyenler</div>
+      <div class="example-box" *ngFor="let item of wait" cdkDrag><i class="fas fa-eye"
+          (click)="selecteditemid = item.id; openAdd()"></i><i class="fas fa-trash"
+          (click)="DeleteTodo(item.id)"></i>{{item.title.length >= 30 ? item.title.substring(0,27) + "..." : item.title}}
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3">
+    <div cdkDropList #doneList="cdkDropList" [cdkDropListData]="work"
+      [cdkDropListConnectedTo]="[todoList,finishList,doneList]" class="example-list"
+      (cdkDropListDropped)="drop($event)">
+      <div class="title">İşlemdekiler</div>
+      <div class="example-box" *ngFor="let item of work" cdkDrag><i class="fas fa-eye"
+          (click)="selecteditemid = item.id; openAdd()"></i><i class="fas fa-trash"
+          (click)="DeleteTodo(item.id)"></i>{{item.title.length >= 30 ? item.title.substring(0,27) + "..." : item.title}}
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3">
+    <div cdkDropList #finishList="cdkDropList" [cdkDropListData]="finish"
+      [cdkDropListConnectedTo]="[doneList,finishList,todoList]" class="example-list"
+      (cdkDropListDropped)="drop($event)">
+      <div class="title">Bitenler</div>
+      <div class="example-box" *ngFor="let item of finish" cdkDrag><i class="fas fa-eye"
+          (click)="selecteditemid = item.id; openAdd()"></i><i class="fas fa-trash"
+          (click)="DeleteTodo(item.id)"></i>{{item.title.length >= 30 ? item.title.substring(0,27) + "..." : item.title}}
+      </div>
+    </div>
+  </div>
+</div>
